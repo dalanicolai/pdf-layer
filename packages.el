@@ -25,7 +25,7 @@
 (setq pdf-packages '((pdf-tools :location (recipe
                                            :fetcher github
                                            :repo "dalanicolai/pdf-tools"
-                                           :branch "pdf-roll"
+                                           :branch "production"
                                            :files ("lisp/*.el"
                                                    "README"
                                                    ;; "vimura-server/*.py"
