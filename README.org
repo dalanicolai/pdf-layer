@@ -8,6 +8,7 @@
 - [[#description][Description]]
   - [[#features][Features:]]
 - [[#install][Install]]
+  - [[#vimura-server][Vimura server]]
   - [[#prerequisites][Prerequisites]]
   - [[#clone][Clone]]
   - [[#dotfile][Dotfile]]
@@ -22,7 +23,9 @@
 
 * Description
 This layer enables support for PDF with the [[https://github.com/vedang/pdf-tools][pdf-tools]] package and adds
-[[https://github.com/dalanicolai/image-roll.el.][image-roll]] support.
+[[https://github.com/dalanicolai/image-roll.el.][image-roll]] support. Additionally, it adds support for the alternative
+=vimura-server=, providing additional features like arrow annotations and EPUB
+support.
 
 According to the official repository:
 
@@ -37,8 +40,22 @@ According to the official repository:
 - Show document headings in outline buffer.
 - Manipulate annotations.
 - Fit PDF to screen.
+- Arrow annotations
+- EPUB support
 
 * Install
+** Vimura server
+After installing pdf-tools from the instructions in the sections below, the
+vimura server can be installed using:
+#+begin_src bash
+  pip install --user vimura-server
+#+end_src
+
+After installing the vimura server, you can use it via =M-x
+pdf-tools-toggle-server=. The vimura server provides extra features like EPUB
+support (just open an EPUB file after activating the server), and arrow
+annotations (using =C-M-mouse-drag-1=).
+
 ** Prerequisites
 Linux is the only operating system officially supported, but it's possible to
 use =pdf-tools= on macOS as well, and possibly on other Unix flavors.
