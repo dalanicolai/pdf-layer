@@ -182,37 +182,39 @@ differently from the default Evil search. To go to the next match, use ~C-s~.
 
 ** Leader keys
 
-| *Key binding*         | *Description*                             |
-|-----------------------+-------------------------------------------|
-| *Slicing*             |                                           |
-|-----------------------+-------------------------------------------|
-| ~SPC m s m~           | Set slice using mouse                     |
-| ~SPC m s b~           | Set slice from bounding box               |
-| ~SPC m s r~           | Reset slice                               |
-|-----------------------+-------------------------------------------|
-| *Annotations*         |                                           |
-|-----------------------+-------------------------------------------|
-| ~SPC m a D~           | Delete annotation (select it with mouse)  |
-| ~SPC m a a~           | List all attachments in a dired buffer    |
-| ~SPC m a h~           | Highlight visual selection                |
-| ~SPC m a l~           | List all annotations                      |
-| ~SPC m a m~           | Add markup annotation to visual selection |
-| ~SPC m a o~           | Strikeout visual selection                |
-| ~SPC m a s~           | Add squiggly to visual selection          |
-| ~SPC m a t~           | Add annotation text                       |
-| ~SPC m a u~           | Underline to visual selection             |
-|-----------------------+-------------------------------------------|
-| *Fit image to window* |                                           |
-|-----------------------+-------------------------------------------|
-| ~SPC m f w~           | Fit width to window                       |
-| ~SPC m f h~           | Fit height to window                      |
-| ~SPC m f p~           | Fit page to window                        |
-|-----------------------+-------------------------------------------|
-| *Other*               |                                           |
-|-----------------------+-------------------------------------------|
-| ~SPC m n~             | Toggle night view mode                    |
-| ~SPC m s~             | Run =pdf-occur=                           |
-| ~SPC m p~             | Display print version                     |
+| *Key binding*         | *Description*                                      |
+|---------------------+--------------------------------------------------|
+| *Slicing*             |                                                  |
+|---------------------+--------------------------------------------------|
+| ~SPC m s m~           | Set slice using mouse                            |
+| ~SPC m s b~           | Set slice from bounding box                      |
+| ~SPC m s r~           | Reset slice                                      |
+|---------------------+--------------------------------------------------|
+| *Annotations*         |                                                  |
+|---------------------+--------------------------------------------------|
+| ~SPC m a a~           | Create highlight annotation (using the keyboard) |
+| ~SPC m a d~           | Delete annotation (using the keyboard)           |
+| ~SPC m a D~           | Delete annotation (select it with mouse)         |
+| ~SPC m a a~           | List all attachments in a dired buffer           |
+| ~SPC m a h~           | Highlight visual selection                       |
+| ~SPC m a l~           | List all annotations                             |
+| ~SPC m a m~           | Add markup annotation to visual selection        |
+| ~SPC m a o~           | Strikeout visual selection                       |
+| ~SPC m a s~           | Add squiggly to visual selection                 |
+| ~SPC m a t~           | Add annotation text                              |
+| ~SPC m a u~           | Underline to visual selection                    |
+|---------------------+--------------------------------------------------|
+| *Fit image to window* |                                                  |
+|---------------------+--------------------------------------------------|
+| ~SPC m f w~           | Fit width to window                              |
+| ~SPC m f h~           | Fit height to window                             |
+| ~SPC m f p~           | Fit page to window                               |
+|---------------------+--------------------------------------------------|
+| *Other*               |                                                  |
+|---------------------+--------------------------------------------------|
+| ~SPC m n~             | Toggle night view mode                           |
+| ~SPC m s~             | Run =pdf-occur=                                    |
+| ~SPC m p~             | Display print version                            |
 
 ** Outline buffer mode
 

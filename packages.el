@@ -25,7 +25,8 @@
 (setq pdf-packages '((pdf-tools :location (recipe
                                            :fetcher github
                                            :repo "dalanicolai/pdf-tools"
-                                           :branch "production"
+                                           :branch "pdf-roll"
+                                           ;; :branch "production"
                                            :files ("lisp/*.el"
                                                    "README"
                                                    ;; "vimura-server/*.py"
@@ -57,6 +58,8 @@
         "sb" 'pdf-view-set-slice-from-bounding-box
         "sr" 'pdf-view-reset-slice
         ;; Annotations
+        ;; "aa"  'pdf-annot-keyboard-annotate
+        ;; "ad"  'pdf-annot-keyboard-delete
         "aD"  'pdf-annot-delete
         "at"  'pdf-annot-attachment-dired
         "ah"  'pdf-annot-add-highlight-markup-annotation
