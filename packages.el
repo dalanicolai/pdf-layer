@@ -25,8 +25,9 @@
 (setq pdf-packages '((pdf-tools :location (recipe
                                            :fetcher github
                                            :repo "dalanicolai/pdf-tools"
-                                           :branch "pdf-roll"
+                                           ;; :branch "scrap-epdf"
                                            ;; :branch "production"
+                                           :branch "pdf-roll"
                                            :files ("lisp/*.el"
                                                    "README"
                                                    ;; "vimura-server/*.py"
@@ -44,6 +45,11 @@
     :mode (("\\.pdf\\'" . pdf-view-mode))
     :init
     (spacemacs//pdf-tools-setup-transient-state)
+
+    (add-hook 'pdf-view-mode-hook
+              (lambda () (add-hook 'evil-evilified-state-entry-hook
+                                   (lambda () (remove-hook 'activate-mark-hook 'evil-visual-activate-hook t)))))
+
     :config
     (progn
       (pdf-tools-install)
@@ -79,8 +85,6 @@
         "O" 'pdf-outline
         "n" 'pdf-view-midnight-minor-mode)
 
-      (evil-define-key 'visual pdf-view-mode-map "y" 'pdf-view-kill-ring-save)
-
       ;; TODO: Make `/', `?' and `n' work like in Evil
       (evilified-state-evilify-map pdf-view-mode-map
         :mode  pdf-view-mode
@@ -114,7 +118,8 @@
         "r"   'pdf-view-revert-buffer
         "o"   'pdf-links-action-perform
         "O"   'pdf-outline
-        "zr"  'pdf-view-scale-reset)
+        "zr"  'pdf-view-scale-reset
+        "y"   'pdf-view-kill-ring-save)
       (evilified-state-evilify-map pdf-outline-buffer-mode-map
         :mode  pdf-outline-buffer-mode
         :bindings
@@ -131,12 +136,11 @@
         "G"                'pdf-outline-end-of-buffer
         (kbd "<tab>")      'outline-toggle-children
         "RET"              'pdf-outline-follow-link
-        (kbd "M-RET")      'pdf-outline-follow-link-and-quit
+        (kbd "S-<return>")      'pdf-outline-follow-link-and-quit
         "f"                'pdf-outline-display-link
         [mouse-1]          'pdf-outline-mouse-display-link
         "o"                'pdf-outline-select-pdf-window
         "``"               'pdf-outline-move-to-current-page
-        "''"               'pdf-outline-move-to-current-page
         "Q"                'pdf-outline-quit-and-kill
         "q"                'quit-window
         "F"                'pdf-outline-follow-mode)
