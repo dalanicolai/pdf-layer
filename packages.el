@@ -25,9 +25,9 @@
 (setq pdf-packages '((pdf-tools :location (recipe
                                            :fetcher github
                                            :repo "dalanicolai/pdf-tools"
-                                           ;; :branch "scrap-epdf"
+                                           :branch "scrap-epdf"
                                            ;; :branch "production"
-                                           :branch "pdf-roll"
+                                           ;; :branch "pdf-roll"
                                            :files ("lisp/*.el"
                                                    "README"
                                                    ;; "vimura-server/*.py"
@@ -122,6 +122,7 @@
         "y"   'pdf-view-kill-ring-save)
       (evilified-state-evilify-map pdf-outline-buffer-mode-map
         :mode  pdf-outline-buffer-mode
+        :eval-after-load pdf-outline
         :bindings
         "-"                'negative-argument
         "j"                'next-line
@@ -146,6 +147,7 @@
         "F"                'pdf-outline-follow-mode)
       (evilified-state-evilify-map pdf-annot-list-mode-map
         :mode  pdf-annot-list-mode
+        :eval-after-load pdf-annot
         :bindings
         "f"                'pdf-annot-list-display-annotation-from-id
         "d"                'tablist-flag-forward
@@ -154,6 +156,7 @@
         "q"                'tablist-quit)
       (evilified-state-evilify-map pdf-occur-buffer-mode-map
         :mode  pdf-occur-buffer-mode
+        :eval-after-load pdf-occur
         :bindings
         "q"              'tablist-quit
         "g"              'pdf-occur-revert-buffer-with-args
